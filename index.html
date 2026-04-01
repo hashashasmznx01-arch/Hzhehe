@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>⚠️ مزحة ⚠️</title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+    }
+    #message {
+        color: red;
+        font-size: 2.5em;
+        text-align: center;
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<div id="message">خلينه نلعب شوي يحلو</div>
+
+<script>
+const message = document.getElementById("message");
+
+function randomPosition() {
+    const x = Math.random() * (window.innerWidth - message.offsetWidth);
+    const y = Math.random() * (window.innerHeight - message.offsetHeight);
+    message.style.left = x + "px";
+    message.style.top = y + "px";
+
+    // تغيير ألوان الخلفية بشكل عشوائي
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+    document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+}
+
+// تحديث الموقع كل نصف ثانية
+setInterval(randomPosition, 500);
+</script>
+
+</body>
+</html>
